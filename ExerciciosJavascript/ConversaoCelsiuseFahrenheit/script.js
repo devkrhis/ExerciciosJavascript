@@ -4,26 +4,40 @@
 // O que fazer? Primeiro pegar os dados da box e salvar esse dados, depois ter outra function dentro da function que pegou os dados e valida se é verdadeiro ou não os dados
 // caso o graus seja verdadeiro ele joga para uma function que faz a conta e devolve o resultado.
 
-function pegandoDadosBox (){
-    const oneBox = document.querySelector('#farenheitbox').checked;
-    const secondBox = document.querySelector('#grausbox').checked;
+function start(){ // tenho que colocar uma função quando é chamada
+    let oneBox = pegandoDadosOneBox()
+    let secondBox = pegandoDadosSecondBox()
 
-    console.log(secondBox);
-    console.log(oneBox); 
- 
+    transformCelsiusemFarenheit()
+
+    let pegandoFarenheit = document.querySelector('#farenheitInput').value;
+
+    transformFarenheitemCelsium(pegandoFarenheit);
+    console.log(oneBox, secondBox)
 }
 
-function pegandoValores(){
-    const grausValue = document.querySelector('#graus');
-    const farenheitValue = document.querySelector('#farenheit');
-
-    const grausnumber = new Number(grausValue.value);
-    console.log(grausnumber)
-    const farenheitnumber = new Number(farenheitValue.value);
-    console.log(farenheitnumber)
+function pegandoDadosOneBox (){// a function só guarda 
+    return document.querySelector('#farenheitbox').checked;
 }
 
-function calcGeral (){
+function pegandoDadosSecondBox (){
+    return document.querySelector('#grausbox').checked;
+}
+
+
+function transformCelsiusemFarenheit(){
+    let pegandoCelsius = document.querySelector('#grausInput').value;
+    console.log(pegandoCelsius) 
+    calcFarenheit();
+
+}
+
+function transformFarenheitemCelsium(valorFarenheit){
+    console.log(valorFarenheit) // function com parametro de fora.
+    calcCelsius();
+}
+
+function calcCelsius (){
 
     let calcFarenheit = (farenheitnumber - 32)/1.8 // transformando em celsius
     let calcGraus = (calcGraus * 1.8)+32 // transformando em fahrenheit
@@ -37,9 +51,20 @@ function calcGeral (){
     }
 }
 
+function calcFarenheit (){
 
+    let calcFarenheit = (farenheitnumber - 32)/1.8 // transformando em celsius
+    let calcGraus = (calcGraus * 1.8)+32 // transformando em fahrenheit
 
-pegandoDadosBox();
+    if (oneBox == true){
+        console.log(`Transformando Farenheit em Graus ${calcGraus}`)
+    } else if (secondBox == true){
+        console.log(`Transformando Graus em Farenheit ${calcFarenheit}`)
+    } else {
+        console.log(`Opção invalida!`)
+    }
+}
+
 
 /*
 Duvidas

@@ -20,11 +20,11 @@
         <h2> Realizando a transformação </h2>
         <form action="" id="calcGrausFarenheit" method="post">
             <label id="graus" name="graus"> Graus: </label>
-            <input type="text" class="graus">
+            <input type="text" class="graus" id="grausInput"> <!-- tenho que pegar o input para pegar o valor -->
 
             <label id="farenheit" name="farenheit"> Farenheit: </label>
-            <input type="text" class="farenheit">
-            <button type="submit"> Enviar Dados</button>
+            <input type="text" class="farenheit" id="farenheitInput">
+            <button type="button" onclick="start()"> Enviar Dados</button>
         </form>
     </section>
     <script src="script.js"></script>
