@@ -8,42 +8,38 @@ function pegandoDadosBox (){
     const oneBox = document.querySelector('#farenheitbox').checked;
     const secondBox = document.querySelector('#grausbox').checked;
 
-    console.log(oneBox)
-    console.log(secondBox)
+    console.log(secondBox);
+    console.log(oneBox); 
+ 
+}
 
-    function pegandoValores(oneBox, secondBox){
-        const grausValue = document.querySelector('#graus');
-        const farenheitValue = document.querySelector('#farenheit');
-    
-        const grausnumber = new Number(grausValue.value);
-        console.log(grausnumber)
-        const farenheitnumber = new Number(farenheitValue.value);
-        console.log(farenheitnumber)
+function pegandoValores(){
+    const grausValue = document.querySelector('#graus');
+    const farenheitValue = document.querySelector('#farenheit');
+
+    const grausnumber = new Number(grausValue.value);
+    console.log(grausnumber)
+    const farenheitnumber = new Number(farenheitValue.value);
+    console.log(farenheitnumber)
+}
+
+function calcGeral (){
+
+    let calcFarenheit = (farenheitnumber - 32)/1.8 // transformando em celsius
+    let calcGraus = (calcGraus * 1.8)+32 // transformando em fahrenheit
+
+    if (oneBox == true){
+        console.log(`Transformando Farenheit em Graus ${calcGraus}`)
+    } else if (secondBox == true){
+        console.log(`Transformando Graus em Farenheit ${calcFarenheit}`)
+    } else {
+        console.log(`Opção invalida!`)
     }
-
-    function calcGeral (){
-
-        let calcFarenheit = (farenheitnumber - 32)/1.8 // transformando em celsius
-        let calcGraus = (calcGraus * 1.8)+32 // transformando em fahrenheit
-
-        if (oneBox == true){
-            console.log(`Transformando Farenheit em Graus ${calcGraus}`)
-        } else if (secondBox == true){
-            console.log(`Transformando Graus em Farenheit ${calcFarenheit}`)
-        } else {
-            console.log(`Opção invalida!`)
-        }
-    }
-
-    console.log(pegandoValores(30, 90))
 }
 
 
 
-
 pegandoDadosBox();
-console.log(pegandoDadosBox());
-pegandoDadosBox(pegandoValores());
 
 /*
 Duvidas
