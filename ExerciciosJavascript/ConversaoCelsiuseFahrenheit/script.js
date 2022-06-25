@@ -15,7 +15,7 @@ function start(){ // tenho que colocar uma função quando é chamada
     transformFarenheitemCelsium(pegandoFarenheit);
     console.log(oneBox, secondBox)
 
-    calcCelsius()
+    calcCelsius(pegandoFarenheit)
     calcFarenheitOne()
 }
 
@@ -31,18 +31,20 @@ function pegandoDadosSecondBox (){
 function transformCelsiusemFarenheit(){
     let pegandoCelsius = document.querySelector('#grausInput').value;
     console.log(pegandoCelsius) 
-    calcFarenheitOne();
 
 }
 
 function transformFarenheitemCelsium(valorFarenheit){
     console.log(valorFarenheit) // function com parametro de fora.
-    calcCelsius();
 }
 
-function calcCelsius (){
+function calcCelsius (valorFarenheit){
+    console.log(valorFarenheit)
 
-    let calcFarenheit = ( - 32)/1.8 // transformando em celsius
+    let oneBox = pegandoDadosOneBox()
+    console.log(oneBox)
+
+    let calcFarenheit = (valorFarenheit - 32)/1.8 // transformando em celsius
 
     if (oneBox == true){
         console.log(`Transformando Farenheit em Graus ${calcFarenheit}`)
@@ -53,7 +55,10 @@ function calcCelsius (){
 
 function calcFarenheitOne (){
 
-    let calcGraus = ( * 1.8)+32 // transformando em fahrenheit
+    let secondBox = pegandoDadosSecondBox()
+    let valorFanheitFunction = document.querySelector('#farenheitInput').value;
+
+    let calcGraus = ( valorFanheitFunction * 1.8)+32 // transformando em fahrenheit
 
     if (secondBox == true){
         console.log(`Transformando Graus em Farenheit ${calcGraus}`)
