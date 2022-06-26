@@ -15,8 +15,10 @@ function start(){ // tenho que colocar uma função quando é chamada
     transformFarenheitemCelsium(pegandoFarenheit);
     console.log(oneBox, secondBox)
 
-    calcCelsius(pegandoFarenheit)
-    calcFarenheitOne()
+    
+    calcCelsius(pegandoFarenheit);
+    calcFarenheitOne();
+   
 }
 
 function pegandoDadosOneBox (){// a function só guarda 
@@ -26,7 +28,6 @@ function pegandoDadosOneBox (){// a function só guarda
 function pegandoDadosSecondBox (){
     return document.querySelector('#grausbox').checked;
 }
-
 
 function transformCelsiusemFarenheit(){
     let pegandoCelsius = document.querySelector('#grausInput').value;
@@ -47,23 +48,23 @@ function calcCelsius (valorFarenheit){
     let calcFarenheit = (valorFarenheit - 32)/1.8 // transformando em celsius
 
     if (oneBox == true){
-        console.log(`Transformando Farenheit em Graus ${calcFarenheit}`)
+        document.getElementById("resultado").innerHTML = (`Transformando Farenheit em Graus! ${calcFarenheit}`)
     } else {
-        console.log(`Opção invalida!`)
+        document.getElementById("resultado").innerHTML = (`Opção invalida!`)
     }
 }
 
 function calcFarenheitOne (){
-
     let secondBox = pegandoDadosSecondBox()
     let valorFanheitFunction = document.querySelector('#farenheitInput').value;
 
     let calcGraus = ( valorFanheitFunction * 1.8)+32 // transformando em fahrenheit
 
+    
     if (secondBox == true){
-        console.log(`Transformando Graus em Farenheit ${calcGraus}`)
+        document.getElementById("resultado").innerHTML = (`Transformando Graus em Farenheit! ${calcGraus}`)
     } else {
-        console.log(`Opção invalida!`)
+        document.getElementById("resultado").innerHTML = (`Opção invalida!`)
     }
 }
 
