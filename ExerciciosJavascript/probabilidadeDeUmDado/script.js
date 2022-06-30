@@ -17,9 +17,17 @@ function diceMath(takingPossibilities){
     console.log(takingPossibilities)
     console.log(total)
 
+    guardandoPrimeiraVariavel 
+    guardandoSegundaVariavel
+    guardandoTerceiraVariavel
+    guardandoQuartaVariavel
+    guardandoQuintaVariavel
+    guardandoSextaVariavel
+
     positionsArray = [0,1,2,3,4,5,6];
     
     for(let i = 1; i < positionsArray.length; i++){
+
         document.getElementById("retorno").innerHTML += (`A possibilidade do numero ${i} é: ${total}`)
         console.log(`A possibilidade do numero ${i} é: ${total}`)
     }
