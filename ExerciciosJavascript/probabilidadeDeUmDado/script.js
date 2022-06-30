@@ -11,24 +11,70 @@ function returnDice(){
 }
 
 function diceMath(takingPossibilities){
-    let aleatory = Math.floor(Math.random() * 6 + 1)
-    // let calc = (takingPossibilities/6) * 100;
-    let total = aleatory//calc.toFixed(2)
-    console.log(takingPossibilities)
-    console.log(total)
-
-    guardandoPrimeiraVariavel 
-    guardandoSegundaVariavel
-    guardandoTerceiraVariavel
-    guardandoQuartaVariavel
-    guardandoQuintaVariavel
-    guardandoSextaVariavel
-
-    positionsArray = [0,1,2,3,4,5,6];
     
-    for(let i = 1; i < positionsArray.length; i++){
+    positionsArray = [0,1,2,3,4,5,6];
 
-        document.getElementById("retorno").innerHTML += (`A possibilidade do numero ${i} é: ${total}`)
-        console.log(`A possibilidade do numero ${i} é: ${total}`)
+    let guardandoPrimeiraVariavel = 0
+    let guardandoSegundaVariavel = 0
+    let guardandoTerceiraVariavel = 0
+    let guardandoQuartaVariavel = 0
+    let guardandoQuintaVariavel = 0
+    let guardandoSextaVariavel = 0
+    let girandoDado = 6
+
+    
+    for(let i = 1; i <= takingPossibilities; i++){
+        girandoDado += 6
+        let aleatory = Math.floor(Math.random() * 6 + 1)
+        if (aleatory == 1){
+           guardandoPrimeiraVariavel += 1 
+
+        } else if(aleatory == 2) {
+            guardandoSegundaVariavel += 1
+
+        } else if (aleatory == 3) {
+            guardandoTerceiraVariavel += 1
+
+        } else if (aleatory == 4) {
+            guardandoQuartaVariavel += 1
+
+        } else if (aleatory == 5){
+            guardandoQuintaVariavel += 1
+
+        } else if (aleatory == 6) {
+            guardandoSextaVariavel += 1
+        } else {
+            console.log("Alguma coisa deu errado para cair aqui!")
+        }
+
+
+        
     }
+
+    let calc1 = (guardandoPrimeiraVariavel/girandoDado) * 100;
+    let calc2 = (guardandoSegundaVariavel/girandoDado) * 100;
+    let calc3 = (guardandoTerceiraVariavel/girandoDado) * 100;
+    let calc4 = (guardandoQuartaVariavel/girandoDado) * 100;
+    let calc5 = (guardandoQuintaVariavel/girandoDado) * 100;
+    let calc6 = (guardandoSextaVariavel/girandoDado) * 100;
+    total1 = calc1.toFixed(2)
+    total2 = calc2.toFixed(2)
+    total3 = calc3.toFixed(2)
+    total4 = calc4.toFixed(2)
+    total5 = calc5.toFixed(2)
+    total6 = calc6.toFixed(2)
+    console.log(takingPossibilities)
+    console.log(guardandoPrimeiraVariavel)
+
+    document.getElementById("retorno").innerHTML += (`O numero 1, foi selecionado ${guardandoPrimeiraVariavel} vezes, A possibilidade do numero é: ${total1}%<br><br>`)
+
+    document.getElementById("retorno").innerHTML += (`O numero 2, foi selecionado ${guardandoSegundaVariavel} vezes, A possibilidade do numero é: ${total2}%<br><br>`)
+
+    document.getElementById("retorno").innerHTML += (`O numero 3, foi selecionado ${guardandoTerceiraVariavel} vezes, A possibilidade do numer é: ${total3}%<br><br>`)
+
+    document.getElementById("retorno").innerHTML += (`O numero 4, foi selecionado ${guardandoQuartaVariavel} vezes, A possibilidade do numero é: ${total4}%<br><br>`)
+
+    document.getElementById("retorno").innerHTML += (`O numero 5, foi selecionado ${guardandoQuintaVariavel} vezes, A possibilidade do numero é: ${total5}%<br><br>`)
+        
+    document.getElementById("retorno").innerHTML += (`O numero 6, foi selecionado ${guardandoSextaVariavel} vezes, A possibilidade do numero é: ${total6}%<br>`)
 }
