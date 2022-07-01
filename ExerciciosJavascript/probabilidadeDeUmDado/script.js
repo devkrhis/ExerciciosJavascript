@@ -20,11 +20,11 @@ function diceMath(takingPossibilities){
     let guardandoQuartaVariavel = 0
     let guardandoQuintaVariavel = 0
     let guardandoSextaVariavel = 0
-    let girandoDado = 6
+
 
     
     for(let i = 1; i <= takingPossibilities; i++){
-        girandoDado += 6
+        //girandoDado += 6
         let aleatory = Math.floor(Math.random() * 6 + 1)
         if (aleatory == 1){
            guardandoPrimeiraVariavel += 1 
@@ -51,20 +51,23 @@ function diceMath(takingPossibilities){
         
     }
 
-    let calc1 = (guardandoPrimeiraVariavel/girandoDado) * 100;
-    let calc2 = (guardandoSegundaVariavel/girandoDado) * 100;
-    let calc3 = (guardandoTerceiraVariavel/girandoDado) * 100;
-    let calc4 = (guardandoQuartaVariavel/girandoDado) * 100;
-    let calc5 = (guardandoQuintaVariavel/girandoDado) * 100;
-    let calc6 = (guardandoSextaVariavel/girandoDado) * 100;
+    //console.log("meu daddo é:", girandoDado)
+    let calc1 = (guardandoPrimeiraVariavel/takingPossibilities) * 100;
+    let calc2 = (guardandoSegundaVariavel/takingPossibilities) * 100;
+    let calc3 = (guardandoTerceiraVariavel/takingPossibilities) * 100;
+    let calc4 = (guardandoQuartaVariavel/takingPossibilities) * 100;
+    let calc5 = (guardandoQuintaVariavel/takingPossibilities) * 100;
+    let calc6 = (guardandoSextaVariavel/takingPossibilities) * 100;
     total1 = calc1.toFixed(2)
     total2 = calc2.toFixed(2)
     total3 = calc3.toFixed(2)
     total4 = calc4.toFixed(2)
     total5 = calc5.toFixed(2)
     total6 = calc6.toFixed(2)
+
+    totalpossibilidade = calc1+calc2+calc3+calc4+calc5+calc6
     console.log(takingPossibilities)
-    console.log(guardandoPrimeiraVariavel)
+    console.log('A primeira variavel:',guardandoPrimeiraVariavel)
 
     document.getElementById("retorno").innerHTML += (`O numero 1, foi selecionado ${guardandoPrimeiraVariavel} vezes, A possibilidade do numero é: ${total1}%<br><br>`)
 
@@ -76,5 +79,9 @@ function diceMath(takingPossibilities){
 
     document.getElementById("retorno").innerHTML += (`O numero 5, foi selecionado ${guardandoQuintaVariavel} vezes, A possibilidade do numero é: ${total5}%<br><br>`)
         
-    document.getElementById("retorno").innerHTML += (`O numero 6, foi selecionado ${guardandoSextaVariavel} vezes, A possibilidade do numero é: ${total6}%<br>`)
+    document.getElementById("retorno").innerHTML += (`O numero 6, foi selecionado ${guardandoSextaVariavel} vezes, A possibilidade do numero é: ${total6}%<br><br>`)
+
+    document.getElementById("retorno").innerHTML += (`O total da porcentagem é: ${totalpossibilidade}%`)
+
+
 }
