@@ -29,6 +29,6 @@ function diceMath(takingPossibilities){
 
     document.getElementById("retorno").innerHTML += (`A provabilidade do numero é: ${total1}%<br><br>`)
 
-    document.getElementById("retorno").innerHTML += (`O total da porcentagem é: ${total1}%`)
+    document.getElementById("retorno").innerHTML += (`A quantidade de tentativas foi: ${takingPossibilities}`)
 
 }
