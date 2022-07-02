@@ -4,7 +4,6 @@ function returnDice(){
     console.log(takingPossibilities);
 
     diceMath(takingPossibilities);
-    document.createElement('table')
 }
 
 function diceMath(takingPossibilities){
