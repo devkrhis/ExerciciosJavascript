@@ -1,0 +1,16 @@
+.titulo-principal {
+    text-align: center;
+}
+
+.botão {
+    text-align: center;
+}
+
+.contador {
+    text-align: center;
+    font-weight: bold;
+    border: solid 2px;
+    margin: 3% 35% 1% 35%;
+    padding: 1%;
+}
+
