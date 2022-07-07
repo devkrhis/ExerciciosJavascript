@@ -8,14 +8,11 @@ function setIdade(transformDia){
     let transformEmAnoFormatado = transformEmAno;
     Math.floor(transformEmAnoFormatado);
 
-    let transformEmMes = (transformDia - 365) / 30
+    let transformEmMes = (transformDia % 365) / 30
     let transforEmMesFomartado = transformEmMes
     Math.floor(transforEmMesFomartado)
 
-    let teste = Math.floor(transformEmMes) * 30
-    console.log('Aqui aparece o dia: ',teste)
-
-    let transformEmDia = (transformDia - 365) - teste
+    let transformEmDia = (transformDia % 365) % 30 
     let transformEmDiaFormatado = transformEmDia
     Math.floor(transformEmDiaFormatado) 
     
@@ -25,8 +22,6 @@ function setIdade(transformDia){
     console.log(`Você tem ${transformEmDiaFormatado} Dias`)
 
 }
-
-// function get
 
 
 
