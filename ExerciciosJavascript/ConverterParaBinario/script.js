@@ -17,22 +17,15 @@ function scriptBinario(setBinario){
     let calcB = '';
 
     for(i=0; calcDivBinario >= 1; i++){
+        let teste = calcDivBinario
         calcDivBinario = Math.floor(calcDivBinario / 2)
         console.log("Aqui está o calcDivBinario", calcDivBinario)
 
-        
-        if(calcDivBinario > 0 || calcDivBinario <= 2){
-            console.log('cheguei aqui.')
-            calcA += calcDivBinario
-            console.log(calcA,'topzera do role')
-
-        }
-
-        let teste = Math.floor(calcDivBinario) % 2
-        console.log('teste',teste)
+        let teste2 = Math.round(teste) % 2
+        console.log('teste',teste2)
         console.log("Valor do calcdivBinario = ", calcDivBinario)
-        if(teste === 0 || teste === 1){
-            calcB += teste
+        if(teste2 === 0 || teste2 === 1){
+            calcB += teste2
             console.log("Cheguei até aqui no CALcB:", calcB)
         }
         console.log("Aqui está o CalcA", Math.floor(calcA))
